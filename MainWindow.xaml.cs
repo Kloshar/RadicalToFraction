@@ -24,7 +24,6 @@ namespace RadicalToFraction
             public double val {  get; set; }
             public string key { get; set; }
         }
-
         private void calculate_btn_Click(object sender, RoutedEventArgs e)
         {
             int x = Convert.ToInt32(valueNumber.Text);
