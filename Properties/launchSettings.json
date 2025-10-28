@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RadicalToFraction": {
+      "commandName": "Project",
+      "commandLineArgs": "2 2 100"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+﻿<Window x:Name="main" x:Class="RadicalToFraction.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RadicalToFraction"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" SizeChanged="main_SizeChanged">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="textBoxStyle">
+                <Setter Property="Control.FontSize" Value="22"/>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Orientation="Vertical">            
+            <Canvas x:Name="canvas" Background="#FFF7FBFF" Width="380" Height="180">
+                <TextBox x:Name="radicalPower" TextWrapping="Wrap" Text="2" Width="30" Height="30" Canvas.Left="20" Canvas.Top="20" Style="{StaticResource textBoxStyle}" HorizontalContentAlignment="Right" />
+                <TextBox x:Name="valueNumber" TextWrapping="Wrap" Text="2" Width="80" Height="30" Canvas.Left="70" Canvas.Top="40" Style="{StaticResource textBoxStyle}" />
+                <Label x:Name="numerator" Content="111" Canvas.Left="200" Canvas.Top="20" Style="{StaticResource textBoxStyle}" HorizontalContentAlignment="Center" />
+                <Label x:Name="denominator" Content="111" Canvas.Left="200" Canvas.Top="60" Style="{StaticResource textBoxStyle}" HorizontalContentAlignment="Center" />
+                <Label Content="≈" Canvas.Left="160" Canvas.Top="35" FontSize="28" FontWeight="Bold" />
+                <Polyline Points="40 55 50 85 60 30 160 30 160 35" Stroke="Black" StrokeThickness="2"/>
+                <Line X1="200" Y1="60" X2="250" Y2="60" Stroke="Black" StrokeThickness="2"/>
+                <Label Content="Максимальное значение" Canvas.Left="10" Canvas.Top="115" Style="{StaticResource textBoxStyle}" HorizontalContentAlignment="Center" />
+                <TextBox x:Name="maxValue" TextWrapping="Wrap" Text="100" Width="80" Height="30" Canvas.Left="280" Canvas.Top="120" Style="{StaticResource textBoxStyle}" />
+            </Canvas>
+            <Button x:Name="calculate_btn" Content="Подобрать дробь" Width="200" Height="30" Click="calculate_btn_Click"/>
+            <!--<ListBox x:Name="listbox" ScrollViewer.CanContentScroll="True" Height="100"/>-->
+            <ListView x:Name="listview">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Value" DisplayMemberBinding="{Binding val}"/>
+                        <GridViewColumn Header="Key" DisplayMemberBinding="{Binding key}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
